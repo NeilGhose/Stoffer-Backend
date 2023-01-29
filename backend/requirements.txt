@@ -12,3 +12,4 @@ apispec[yaml]
 apispec-webframeworks
 tox
 celery[redis]>=5.0.0
+flask-cors

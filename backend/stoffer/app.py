@@ -1,4 +1,6 @@
 from flask import Flask
+from flask_cors import CORS, cross_origin
+
 from stoffer import api
 from stoffer import auth
 from stoffer import manage
@@ -12,6 +14,8 @@ def create_app(testing=False):
     """Application factory, used to create application"""
     app = Flask("stoffer")
     app.config.from_object("stoffer.config")
+    CORS(app)
+
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///stoffer.db'
 
     if testing is True:
